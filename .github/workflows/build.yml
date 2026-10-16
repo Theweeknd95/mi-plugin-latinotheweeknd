@@ -6,9 +6,13 @@ on:
     branches:
       - template
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -23,3 +27,15 @@ jobs:
 
       - name: Build providers
         run: node build.js
+
+      - name: Save generated providers
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add providers/
+          if ! git diff --cached --quiet; then
+            git commit -m "Build generated providers"
+            git push
+          else
+            echo "No generated changes to save."
+          fi
