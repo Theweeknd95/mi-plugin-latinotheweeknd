@@ -1,23 +1,24 @@
 [
   {
-    "id": "template-provider",
-    "name": "Template Provider",
-    "description": "A starter template for creating Nuvio providers.",
+    "id": "latino",
+    "name": "Latino",
+    "description": "Proveedor de contenido en español latino",
     "version": "1.0.0",
-    "author": "Your Name",
+    "author": "Theweeknd95",
     "supportedTypes": [
       "movie",
       "tv"
     ],
-    "filename": "providers/template.js",
-    "enabled": false,
+    "filename": "providers/latino.js",
+    "enabled": true,
     "logo": "",
     "contentLanguage": [
-      "en"
+      "es"
     ],
     "formats": [
       "mp4",
-      "mkv"
+      "mkv",
+      "m3u8"
     ],
     "limited": false,
     "disabledPlatforms": [],
